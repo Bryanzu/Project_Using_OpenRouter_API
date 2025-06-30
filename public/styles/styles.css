@@ -1,0 +1,25 @@
+
+
+        /* Custom gradient background */
+        .gradient-bg {
+            background: linear-gradient(135deg, #6e8efb 20%, #a777e3 100%);
+        }
+        
+        /* Pulse animation for the submit button */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Smooth transition for cards */
+        .option-card {
+            transition: all 0.3s ease;
+        }
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Me Anything - AI Assistant</title>
+    <!-- Import Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/jquery.js" charset="UTF-8"></script>
+    <script src="js/script.js" charset="UTF-8"></script>
+    <link href="styles/styles.css" rel="stylesheet">
+</head>
+<body class="min-h-screen gradient-bg text-gray-100">
+    <!-- Main container -->
+    <div class="container mx-auto px-4 py-12">
+        <!-- Header section -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Ask Me Anything</h1>
+            <p class="text-xl md:text-2xl opacity-90">Your intelligent AI assistant ready to help with anything</p>
+        </header>
+
+        <!-- Main content area -->
+        <main class="max-w-4xl mx-auto">
+            <!-- Input section -->
+            <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 shadow-xl mb-8">
+                <div class="flex flex-col md:flex-row gap-4">
+                    <!-- Text input field -->
+                    <input 
+                        type="text" 
+                        id="questionInput" 
+                        placeholder="What would you like to know?" 
+                        class="flex-grow px-6 py-4 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-purple-300 text-lg placeholder-white placeholder-opacity-70"
+                    >
+                    <!-- Submit button -->
+                    <button 
+                        id="submitBtn"
+                        class="px-8 py-4 bg-purple-600 hover:bg-purple-700 rounded-lg font-semibold text-lg transition-all duration-300 pulse-animation flex items-center justify-center"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                        </svg>
+                        Ask
+                    </button>
+                </div>
+                
+            </div>
+
+            <!-- Action buttons section -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Search action -->
+                <div class="option-card bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 text-center cursor-pointer hover:bg-opacity-20">
+                    <div class="bg-purple-500 bg-opacity-20 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Search</h3>
+                    <p class="text-sm opacity-80">Find information on any topic</p>
+                </div>
+                
+                <!-- Generate image action -->
+                <div class="option-card bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 text-center cursor-pointer hover:bg-opacity-20">
+                    <div class="bg-purple-500 bg-opacity-20 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Generate Image</h3>
+                    <p class="text-sm opacity-80">Create AI-generated images</p>
+                </div>
+                
+                <!-- Summarize action -->
+                <div class="option-card bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 text-center cursor-pointer hover:bg-opacity-20">
+                    <div class="bg-purple-500 bg-opacity-20 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Summarize</h3>
+                    <p class="text-sm opacity-80">Get concise summaries of text</p>
+                </div>
+                
+                <!-- Translate action -->
+                <div class="option-card bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 text-center cursor-pointer hover:bg-opacity-20">
+                    <div class="bg-purple-500 bg-opacity-20 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Translate</h3>
+                    <p class="text-sm opacity-80">Translate between languages</p>
+                </div>
+            </div>
+
+            <!-- Response area -->
+            <div id="responseArea" class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 shadow-xl min-h-64 hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold">Response</h2>
+                    <button id="copyBtn" class="text-purple-300 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="responseContent" class="prose prose-invert max-w-none">
+                    <!-- Response content will be inserted here by JavaScript -->
+                </div>
+                <button id="stopBtn" class="bg-red-500 text-white px-4 py-2 rounded">Stop</button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-16 opacity-80 text-sm">
+            <p>@<%= (new Date).getFullYear()%> Ask Me Anything AI. All rights reserved.</p>
+        </footer>
+    </div>
+
+
+</body>
+</html>
