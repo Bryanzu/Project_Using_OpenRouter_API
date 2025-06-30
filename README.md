@@ -71,3 +71,5 @@ When a question is sent to the `/ask` endpoint, the application returns a JSON r
 ## License
 
 This project is licensed under the MIT License.
+
+![Home Page]("./images/image.png")
